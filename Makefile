@@ -141,10 +141,21 @@ PHONY += $(MAKECMDGOALS) sub-make
 $(filter-out _all sub-make $(CURDIR)/Makefile, $(MAKECMDGOALS)) _all: sub-make
 	@:
 
+
+
 # Invoke a second make in the output directory, passing relevant variables
 sub-make:
-	$(Q)$(MAKE) -C $(KBUILD_OUTPUT) KBUILD_SRC=$(CURDIR) \
-	-f $(CURDIR)/Makefile $(filter-out _all sub-make,$(MAKECMDGOALS))
+	@echo "Invoking sub-make with the following command:" > /buildd/sources/build-berb-makefile-echos.log
+	@echo "Q = $(Q) MAKE = $(MAKE) -C KBUILD_OUTPUT = $(KBUILD_OUTPUT) KBUILD_SRC = $(CURDIR)" >> /buildd/sources/build-berb-makefile-echos.log
+	@echo "-f $(CURDIR)/Makefile $(filter-out _all sub-make,$(MAKECMDGOALS))" >> /buildd/sources/build-berb-makefile-echos.log
+	@echo "" >> /buildd/sources/build-berb-makefile-echos.log
+	@echo "" >> /buildd/sources/build-berb-makefile-echos.log
+	@echo "Prints. paths vars:" >> /buildd/sources/build-berb-makefile-echos.log
+	@echo "KBUILD_OUTPUT=$(KBUILD_OUTPUT)" >> /buildd/sources/build-berb-makefile-echos.log
+	@echo "KBUILD_SRC=$(CURDIR)" >> /buildd/sources/build-berb-makefile-echos.log
+	@echo "MAKECMDGOALS=$(MAKECMDGOALS)" >> /buildd/sources/build-berb-makefile-echos.log
+	$(Q)$(MAKE) V=1 -C $(KBUILD_OUTPUT) KBUILD_SRC=$(CURDIR) \
+	-f $(CURDIR)/Makefile $(filter-out _all sub-make,$(MAKECMDGOALS)) > /buildd/sources/build-berb-makefile-make-command.log
 
 # Leave processing to above invocation of make
 skip-makefile := 1
