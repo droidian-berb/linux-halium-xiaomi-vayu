@@ -131,13 +131,23 @@ kernel/configs/android-*.cfg
 #
 Android.bp
 
+# Droidian
+!.gitmodules
+!debian
+debian/changelog
+debian/path-override
+debian/*.substvars
+debian/*.debhelper
+debian/files
+debian/debhelper-build-stamp
+debian/linux-*/
+debian/*.postinst
+out/
 #
-# hybris-mobian changes
-!/debian
-!.travis.yml
 #
 # Added by Droidian
 !.circleci/
 #
 # Aded by Berbascum
 compile-droidian-kernel.sh
+build-berb*.log
