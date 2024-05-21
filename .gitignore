@@ -149,6 +149,6 @@ out/
 !.circleci/
 #
 # Aded by Berbascum
-compile-droidian-kernel.sh
+#compile-droidian-kernel.sh
 build-berb*.log
 droidian/python
