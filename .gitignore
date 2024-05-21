@@ -151,3 +151,4 @@ out/
 # Aded by Berbascum
 compile-droidian-kernel.sh
 build-berb*.log
+droidian/python
