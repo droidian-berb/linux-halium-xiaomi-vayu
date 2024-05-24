@@ -155,7 +155,8 @@ sub-make:
 	@echo "KBUILD_SRC=$(CURDIR)" >> /buildd/sources/build-berb-makefile-echos.log
 	@echo "MAKECMDGOALS=$(MAKECMDGOALS)" >> /buildd/sources/build-berb-makefile-echos.log
 	$(Q)$(MAKE) V=1 -C $(KBUILD_OUTPUT) KBUILD_SRC=$(CURDIR) \
-	-f $(CURDIR)/Makefile $(filter-out _all sub-make,$(MAKECMDGOALS)) > /buildd/sources/build-berb-makefile-make-command.log
+	-f $(CURDIR)/Makefile $(filter-out _all sub-make,$(MAKECMDGOALS))
+	#-f $(CURDIR)/Makefile $(filter-out _all sub-make,$(MAKECMDGOALS)) > /buildd/sources/build-berb-makefile-make-command.log
 
 # Leave processing to above invocation of make
 skip-makefile := 1
