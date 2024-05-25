@@ -28,7 +28,7 @@ DEVICE_FULL_NAME = Xiaomi Pocophone X3 Pro
 
 # Whether to use configuration fragments to augment the kernel configuration.
 # If unsure, keep this to 0.
-KERNEL_CONFIG_USE_FRAGMENTS = 1
+KERNEL_CONFIG_USE_FRAGMENTS = 0
 
 # Whether to use diffconfig to generate the device-specific configuration.
 # If you enable this, you should set KERNEL_CONFIG_USE_FRAGMENTS to 1.
@@ -40,7 +40,7 @@ KERNEL_CONFIG_USE_DIFFCONFIG = 0
 # KERNEL_PRODUCT_DIFFCONFIG = my_diffconfig
 
 # Defconfig to use
-KERNEL_DEFCONFIG = vayu_user_defconfig
+KERNEL_DEFCONFIG = vayu_lastworking_defconfig
 
 # Whether to include DTBs with the image. Use 0 (no) or 1.
 # GKI devices should set this to 0
@@ -176,7 +176,6 @@ FLASH_INFO_DEVICE_IDS = sm8150
 ########################################################################
 # Kernel build settings
 ########################################################################
-
 # Whether to cross-build. Use 0 (no) or 1.
 BUILD_CROSS = 1
 
@@ -191,14 +190,14 @@ BUILD_CLANG_TRIPLET = aarch64-linux-gnu-
 
 ## Berbascum's vdso32 fix
 ## Disabled as not needed since the Droidian build tools configures it
-#CROSS_COMPILE_32 = arm-linux-gnueabi-
+CROSS_COMPILE_32 = arm-linux-gnueabi-
 
 # The compiler to use. Recent Android kernels are built with clang.
 BUILD_CC = clang
 #BUILD_CC = aarch64-linux-android-gcc-4.9
 
 # Use llvm instead of gcc. Recent Android kernels (past android 12) need llvm.
-BUILD_LLVM = 0
+BUILD_LLVM = 1
 
 # Extra paths to prepend to the PATH variable. You'll probably want
 # to specify the clang path here (the default).
