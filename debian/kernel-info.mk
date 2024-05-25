@@ -190,7 +190,8 @@ BUILD_TRIPLET = aarch64-linux-android-
 BUILD_CLANG_TRIPLET = aarch64-linux-gnu-
 
 ## Berbascum's vdso32 fix
-CROSS_COMPILE_32 = arm-linux-gnueabi-
+## Disabled as not needed since the Droidian build tools configures it
+#CROSS_COMPILE_32 = arm-linux-gnueabi-
 
 # The compiler to use. Recent Android kernels are built with clang.
 BUILD_CC = clang
