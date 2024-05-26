@@ -28,7 +28,7 @@ DEVICE_FULL_NAME = Xiaomi Pocophone X3 Pro
 
 # Whether to use configuration fragments to augment the kernel configuration.
 # If unsure, keep this to 0.
-KERNEL_CONFIG_USE_FRAGMENTS = 0
+KERNEL_CONFIG_USE_FRAGMENTS = 1
 
 # Whether to use diffconfig to generate the device-specific configuration.
 # If you enable this, you should set KERNEL_CONFIG_USE_FRAGMENTS to 1.
@@ -131,7 +131,7 @@ DEVICE_VBMETA_IS_SAMSUNG = 0
 ########################################################################
 
 # Whether to enable kernel upgrades on package upgrades. Use 0 (no) or 1.
-FLASH_ENABLED = 0
+FLASH_ENABLED = 1
 
 # If your device is treble-ized, but aonly, you should set the following to
 # 1 (yes).
@@ -190,7 +190,7 @@ BUILD_CLANG_TRIPLET = aarch64-linux-gnu-
 
 ## Berbascum's vdso32 fix
 ## Disabled as not needed since the Droidian build tools configures it
-CROSS_COMPILE_32 = arm-linux-gnueabi-
+#CROSS_COMPILE_32 = arm-linux-gnueabi-
 
 # The compiler to use. Recent Android kernels are built with clang.
 BUILD_CC = clang
