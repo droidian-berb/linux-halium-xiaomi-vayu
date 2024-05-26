@@ -49,7 +49,7 @@ KERNEL_IMAGE_WITH_DTB = 1
 # Path to the DTB
 # If you leave this undefined, an attempt to find it automatically
 # will be made.
-KERNEL_IMAGE_DTB = arch/arm64/boot/dts/qcom/sm8150p.dtb
+KERNEL_IMAGE_DTB = arch/arm64/boot/dts/qcom/sm8150-v2.dtb
 
 # Whether to include a DTB Overlay. Use 0 (no) or 1.
 # GKI devices should set this to 0
